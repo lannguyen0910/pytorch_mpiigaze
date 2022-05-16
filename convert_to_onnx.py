@@ -35,7 +35,17 @@ def main():
     else:
         raise ValueError
 
-    torch.onnx.export(model, data, args.output_path)
+    # torch.onnx.export(model, data, args.output_path)
+    torch.onnx.export(
+        model = model,
+        args = data,
+        f = args.output_path,
+        verbose = False,
+        export_params=True,
+        do_constant_folding = False,
+        input_names = ['input'],
+        opset_version = 10,
+        output_names = ['output'])
 
 
 if __name__ == '__main__':
