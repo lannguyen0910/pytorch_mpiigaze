@@ -37,7 +37,7 @@ def create_optimizer(config: yacs.config.CfgNode,
                                     momentum=config.train.momentum,
                                     nesterov=config.train.nesterov)
     elif config.train.optimizer == 'adam':
-        optimizer = torch.optim.Adam(params,
+        optimizer = torch.optim.AdamW(params,
                                      lr=config.train.base_lr,
                                      betas=config.optim.adam.betas)
     elif config.train.optimizer == 'amsgrad':

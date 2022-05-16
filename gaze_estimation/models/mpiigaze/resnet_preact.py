@@ -58,7 +58,7 @@ class Model(nn.Module):
         super().__init__()
 
         depth = 8
-        base_channels = 16
+        base_channels = 64
         input_shape = (1, 1, 36, 60)
 
         n_blocks_per_stage = (depth - 2) // 6

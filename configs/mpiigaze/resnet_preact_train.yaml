@@ -6,15 +6,15 @@ model:
   name: resnet_preact
 train:
   batch_size: 32
-  optimizer: sgd
-  base_lr: 0.1
+  optimizer: adam
+  base_lr: 0.001
   momentum: 0.9
   nesterov: True
-  weight_decay: 0.0001
+  weight_decay: 0.00005
   no_weight_decay_on_bn: False
   loss: L2
   seed: 0
-  test_id: 0
+  test_id: -1
   val_ratio: 0.1
   output_dir: experiments/mpiigaze/resnet_preact/exp00
   log_period: 100
@@ -23,12 +23,12 @@ train:
   train_dataloader:
     num_workers: 4
     drop_last: True
-    pin_memory: False
+    pin_memory: True
   val_dataloader:
     num_workers: 4
-    pin_memory: False
+    pin_memory: True
 scheduler:
-  epochs: 40
+  epochs: 50
   type: multistep
   milestones: [30, 35]
   lr_decay: 0.1

@@ -17,18 +17,18 @@ train:
   test_id: -1
   val_ratio: 0.0
   output_dir: experiments/mpiigaze/resnet_preact/exp00
-  log_period: 100
+  log_period: 500
   checkpoint_period: 10
   use_tensorboard: True
   train_dataloader:
-    num_workers: 4
+    num_workers: 2
     drop_last: True
-    pin_memory: False
+    pin_memory: True
   val_dataloader:
-    num_workers: 4
-    pin_memory: False
+    num_workers: 2
+    pin_memory: True
 scheduler:
-  epochs: 40
+  epochs: 50
   type: multistep
   milestones: [30, 35]
   lr_decay: 0.1
