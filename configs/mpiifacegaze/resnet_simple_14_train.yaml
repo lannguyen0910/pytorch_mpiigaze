@@ -29,11 +29,11 @@ train:
   checkpoint_period: 5
   use_tensorboard: True
   train_dataloader:
-    num_workers: 4
+    num_workers: 2
     drop_last: True
     pin_memory: False
   val_dataloader:
-    num_workers: 4
+    num_workers: 2
     pin_memory: False
 scheduler:
   epochs: 15
