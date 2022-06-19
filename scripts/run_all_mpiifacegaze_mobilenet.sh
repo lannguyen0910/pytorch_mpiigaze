@@ -2,7 +2,7 @@
 
 set -Ceu
 
-arch=alexnet
+arch=mobilenetv2
 exp_id=${1:-00}
 devices=${2:-0}
 exp_root_dir=experiments/mpiifacegaze/${arch}/exp${exp_id}/

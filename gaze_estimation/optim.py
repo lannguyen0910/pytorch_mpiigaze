@@ -39,11 +39,11 @@ def create_optimizer(config: yacs.config.CfgNode,
     elif config.train.optimizer == 'adam':
         optimizer = torch.optim.AdamW(params,
                                      lr=config.train.base_lr,
-                                     betas=config.optim.adam.betas)
+                                     betas=config.train.betas)
     elif config.train.optimizer == 'amsgrad':
         optimizer = torch.optim.Adam(params,
                                      lr=config.train.base_lr,
-                                     betas=config.optim.adam.betas,
+                                     betas=config.train.betas,
                                      amsgrad=True)
     else:
         raise ValueError()

@@ -6,11 +6,11 @@ transform:
   mpiifacegaze_face_size: 448
   mpiifacegaze_gray: False
 model:
-  name: alexnet
+  name: mobilenet_v2
 test:
   test_id: 0
-  checkpoint: experiments/mpiifacegaze/alexnet/exp00/00/checkpoint_0015.pth
-  output_dir: experiments/mpiifacegaze/alexnet/exp00/00/eval
+  checkpoint: experiments/mpiifacegaze/mobilenetv2/exp00/00/checkpoint_0015.pth
+  output_dir: experiments/mpiifacegaze/mobilenetv2/exp00/00/eval
   batch_size: 256
   dataloader:
     num_workers: 4
