@@ -3,12 +3,12 @@ device: cuda
 dataset:
   dataset_dir: datasets/MPIIFaceGaze.h5
 transform:
-  mpiifacegaze_face_size: 448
+  mpiifacegaze_face_size: 224
   mpiifacegaze_gray: False
 model:
   name: mobilenet_v2
 train:
-  batch_size: 32
+  batch_size: 64
   optimizer: sgd
   base_lr: 0.01
   momentum: 0.9
@@ -24,16 +24,16 @@ train:
   checkpoint_period: 5
   use_tensorboard: True
   train_dataloader:
-    num_workers: 4
+    num_workers: 2
     drop_last: True
     pin_memory: False
   val_dataloader:
-    num_workers: 4
+    num_workers: 2
     pin_memory: False
 scheduler:
-  epochs: 15
+  epochs: 10
   type: multistep
-  milestones: [10, 13]
+  milestones: [5, 7]
   lr_decay: 0.1
   lr_min_factor: 0.001
 cudnn:

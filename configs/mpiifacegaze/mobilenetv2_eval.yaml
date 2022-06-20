@@ -3,7 +3,7 @@ device: cuda
 dataset:
   dataset_dir: datasets/MPIIFaceGaze.h5
 transform:
-  mpiifacegaze_face_size: 448
+  mpiifacegaze_face_size: 224
   mpiifacegaze_gray: False
 model:
   name: mobilenet_v2
@@ -13,7 +13,7 @@ test:
   output_dir: experiments/mpiifacegaze/mobilenetv2/exp00/00/eval
   batch_size: 256
   dataloader:
-    num_workers: 4
+    num_workers: 2
     pin_memory: False
 cudnn:
   benchmark: True

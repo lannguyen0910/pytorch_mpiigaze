@@ -36,9 +36,9 @@ train:
     num_workers: 2
     pin_memory: False
 scheduler:
-  epochs: 15
+  epochs: 10
   type: multistep
-  milestones: [10, 13]
+  milestones: [5, 7]
   lr_decay: 0.1
   lr_min_factor: 0.001
 cudnn:
