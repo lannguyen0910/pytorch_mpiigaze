@@ -2,20 +2,20 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision
-
 import numpy as np 
 
 from PIL import Image
 from torchvision import transforms
+import yacs
 
 class Model(nn.Module):
-    def __init__(self,):    
+    def __init__(self, config: yacs.config.CfgNode):    
         super(Model, self).__init__()
 
         model = torchvision.models.mobilenet_v2(pretrained=True)
         model.features[-1] = torchvision.models.mobilenet.ConvBNReLU(320, 256, kernel_size=1)
 
-        self.feature_extractor = model.features
+        self.feature_extractor = model.features[:-1]
         # While the pretrained models of torchvision are trained using
         # images with RGB channel order, in this repository images are
         # treated as BGR channel order.
