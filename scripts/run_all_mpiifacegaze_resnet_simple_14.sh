@@ -16,6 +16,6 @@ for test_id in {0..14}; do
     CUDA_VISIBLE_DEVICES=${devices} python -u evaluate.py \
         --config configs/mpiifacegaze/${arch}_eval.yaml \
         test.test_id ${test_id} \
-        test.checkpoint "${exp_dir}"/checkpoint_0015.pth \
+        test.checkpoint "${exp_dir}"/checkpoint_0010.pth \
         test.output_dir "${exp_dir}"/eval
 done
