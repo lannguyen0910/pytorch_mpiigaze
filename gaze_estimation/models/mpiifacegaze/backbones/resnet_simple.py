@@ -28,8 +28,8 @@ class Model(torchvision.models.ResNet):
             # # images are treated as BGR channel order.
             # # Therefore, reverse the channel order of the first
             # # convolutional layer.
-            # module = self.conv1
-            # module.weight.data = module.weight.data[:, [2, 1, 0]]
+            module = self.conv1
+            module.weight.data = module.weight.data[:, [2, 1, 0]]
 
         with torch.no_grad():
             data = torch.zeros((1, 3, 224, 224), dtype=torch.float32)

@@ -10,7 +10,7 @@ import yacs.config
 class Model(nn.Module):
     def __init__(self, config: yacs.config.CfgNode):
         super().__init__()
-        self.feature_extractor = torchvision.models.mobilenet_v2(
+        self.feature_extractor = torchvision.models.alexnet(
             pretrained=True).features
         # While the pretrained models of torchvision are trained using
         # images with RGB channel order, in this repository images are

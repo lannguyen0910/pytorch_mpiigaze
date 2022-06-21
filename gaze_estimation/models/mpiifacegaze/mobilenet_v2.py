@@ -22,7 +22,6 @@ class Model(nn.Module):
         # Therefore, reverse the channel order of the first convolutional
         # layer.
         module = getattr(self.feature_extractor, '0')
-        module.weight.data = module.weight.data[:, [2, 1, 0]]
 
         self.backbone = model.features
 
