@@ -9,7 +9,7 @@ model:
   name: mobilenet_v2
 test:
   test_id: 0
-  checkpoint: experiments/mpiifacegaze/mobilenetv2/exp00/00/checkpoint_0015.pth
+  checkpoint: experiments/mpiifacegaze/mobilenetv2/exp00/00/checkpoint_0010.pth
   output_dir: experiments/mpiifacegaze/mobilenetv2/exp00/00/eval
   batch_size: 256
   dataloader:

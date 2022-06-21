@@ -14,7 +14,7 @@ model:
     resnet_layers: [2, 2, 2]
 test:
   test_id: 0
-  checkpoint: experiments/mpiifacegaze/resnet_simple_14/exp00/00/checkpoint_0015.pth
+  checkpoint: experiments/mpiifacegaze/resnet_simple_14/exp00/00/checkpoint_0010.pth
   output_dir: experiments/mpiifacegaze/resnet_simple_14/exp00/00/eval
   batch_size: 256
   dataloader:
